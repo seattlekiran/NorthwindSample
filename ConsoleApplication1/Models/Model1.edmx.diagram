@@ -5,32 +5,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ba97b784400545389620616c2cfc548c" Name="Diagram1">
-        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.CustomerDemographic" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Customer" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Employee" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Region" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Shipper" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Supplier" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Territory" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Alphabetical_list_of_product" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Category_Sales_for_1997" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Current_Product_List" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Customer_and_Suppliers_by_City" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Invoice" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Order_Details_Extended" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Order_Subtotal" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Orders_Qry" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Product_Sales_for_1997" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Products_Above_Average_Price" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Products_by_Category" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Sales_by_Category" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Sales_Totals_by_Amount" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Summary_of_Sales_by_Quarter" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Summary_of_Sales_by_Year" Width="1.5" PointX="13.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="10.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.CustomerDemographic" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Customer" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Employee" Width="1.5" PointX="0.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="6.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="8.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Region" Width="1.5" PointX="6.375" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Shipper" Width="1.5" PointX="6.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Supplier" Width="1.5" PointX="10.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Territory" Width="1.5" PointX="4.375" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Alphabetical_list_of_product" Width="1.5" PointX="2.875" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Category_Sales_for_1997" Width="1.5" PointX="0.625" PointY="10.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Current_Product_List" Width="1.5" PointX="2.625" PointY="10.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Customer_and_Suppliers_by_City" Width="1.5" PointX="0.625" PointY="12" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Invoice" Width="1.5" PointX="0.625" PointY="15.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Order_Details_Extended" Width="1.75" PointX="0.625" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Order_Subtotal" Width="1.5" PointX="0.625" PointY="14" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Orders_Qry" Width="1.5" PointX="0.625" PointY="11.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Product_Sales_for_1997" Width="1.5" PointX="0.625" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Products_Above_Average_Price" Width="1.5" PointX="0.625" PointY="13.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Products_by_Category" Width="1.5" PointX="2.625" PointY="14" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Sales_by_Category" Width="1.5" PointX="2.625" PointY="11.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Sales_Totals_by_Amount" Width="1.5" PointX="2.625" PointY="11.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Summary_of_Sales_by_Quarter" Width="1.5" PointX="2.625" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Summary_of_Sales_by_Year" Width="1.5" PointX="2.625" PointY="13.375" IsExpanded="false" />
         <AssociationConnector Association="NorthwindModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Orders_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Employees_Employees" ManuallyRouted="false" />
