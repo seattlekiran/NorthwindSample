@@ -1,0 +1,434 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="ConsoleApplication1.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Alphabetical_list_of_product">
+        <Key>
+          <PropertyRef Name="ProductID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ProductName" Type="Edm.String" />
+        <Property Name="SupplierID" Type="Edm.Int32" />
+        <Property Name="CategoryID" Type="Edm.Int32" />
+        <Property Name="QuantityPerUnit" Type="Edm.String" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" />
+        <Property Name="UnitsInStock" Type="Edm.Int16" />
+        <Property Name="UnitsOnOrder" Type="Edm.Int16" />
+        <Property Name="ReorderLevel" Type="Edm.Int16" />
+        <Property Name="Discontinued" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CategoryName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="Category_Sales_for_1997">
+        <Key>
+          <PropertyRef Name="CategoryName" />
+        </Key>
+        <Property Name="CategoryName" Type="Edm.String" Nullable="false" />
+        <Property Name="CategorySales" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="Employee">
+        <Key>
+          <PropertyRef Name="EmployeeID" />
+        </Key>
+        <Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TitleOfCourtesy" Type="Edm.String" />
+        <Property Name="BirthDate" Type="Edm.DateTime" />
+        <Property Name="HireDate" Type="Edm.DateTime" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="HomePhone" Type="Edm.String" />
+        <Property Name="Extension" Type="Edm.String" />
+        <Property Name="Notes" Type="Edm.String" />
+        <NavigationProperty Name="PhotoInfo" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_PhotoInfo_ConsoleApplication1_Models_Photo_PhotoInfoPartner" ToRole="PhotoInfo" FromRole="PhotoInfoPartner" />
+        <NavigationProperty Name="Employees1" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Employees1_ConsoleApplication1_Models_Employee_Employees1Partner" ToRole="Employees1" FromRole="Employees1Partner" />
+        <NavigationProperty Name="Employee1" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Employee1_ConsoleApplication1_Models_Employee_Employee1Partner" ToRole="Employee1" FromRole="Employee1Partner" />
+        <NavigationProperty Name="Orders" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Orders_ConsoleApplication1_Models_Order_OrdersPartner" ToRole="Orders" FromRole="OrdersPartner" />
+        <NavigationProperty Name="Territories" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner" ToRole="Territories" FromRole="TerritoriesPartner" />
+      </EntityType>
+      <EntityType Name="Category">
+        <Key>
+          <PropertyRef Name="CategoryID" />
+        </Key>
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CategoryName" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Picture" Type="Edm.Binary" />
+        <NavigationProperty Name="Products" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Category_Products_ConsoleApplication1_Models_Product_ProductsPartner" ToRole="Products" FromRole="ProductsPartner" />
+      </EntityType>
+      <EntityType Name="CustomerDemographic">
+        <Key>
+          <PropertyRef Name="CustomerTypeID" />
+        </Key>
+        <Property Name="CustomerTypeID" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerDesc" Type="Edm.String" />
+        <NavigationProperty Name="Customers" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_CustomerDemographic_Customers_ConsoleApplication1_Models_Customer_CustomersPartner" ToRole="Customers" FromRole="CustomersPartner" />
+      </EntityType>
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="CustomerID" />
+        </Key>
+        <Property Name="CustomerID" Type="Edm.String" Nullable="false" />
+        <Property Name="CompanyName" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="ContactTitle" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="Fax" Type="Edm.String" />
+        <NavigationProperty Name="Orders" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Customer_Orders_ConsoleApplication1_Models_Order_OrdersPartner" ToRole="Orders" FromRole="OrdersPartner" />
+        <NavigationProperty Name="CustomerDemographics" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Customer_CustomerDemographics_ConsoleApplication1_Models_CustomerDemographic_CustomerDemographicsPartner" ToRole="CustomerDemographics" FromRole="CustomerDemographicsPartner" />
+      </EntityType>
+      <EntityType Name="Order">
+        <Key>
+          <PropertyRef Name="OrderID" />
+        </Key>
+        <Property Name="OrderID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderDate" Type="Edm.DateTime" />
+        <Property Name="RequiredDate" Type="Edm.DateTime" />
+        <Property Name="ShippedDate" Type="Edm.DateTime" />
+        <Property Name="Freight" Type="Edm.Decimal" />
+        <Property Name="ShipName" Type="Edm.String" />
+        <Property Name="ShipAddress" Type="Edm.String" />
+        <Property Name="ShipCity" Type="Edm.String" />
+        <Property Name="ShipRegion" Type="Edm.String" />
+        <Property Name="ShipPostalCode" Type="Edm.String" />
+        <Property Name="ShipCountry" Type="Edm.String" />
+        <NavigationProperty Name="Customer" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Customer_ConsoleApplication1_Models_Customer_CustomerPartner" ToRole="Customer" FromRole="CustomerPartner" />
+        <NavigationProperty Name="Employee" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Employee_ConsoleApplication1_Models_Employee_EmployeePartner" ToRole="Employee" FromRole="EmployeePartner" />
+        <NavigationProperty Name="Order_Details" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner" ToRole="Order_Details" FromRole="Order_DetailsPartner" />
+        <NavigationProperty Name="Shipper" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Shipper_ConsoleApplication1_Models_Shipper_ShipperPartner" ToRole="Shipper" FromRole="ShipperPartner" />
+      </EntityType>
+      <EntityType Name="Order_Detail">
+        <Key>
+          <PropertyRef Name="ProductID" />
+          <PropertyRef Name="OrderID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Int16" Nullable="false" />
+        <Property Name="Discount" Type="Edm.Single" Nullable="false" />
+        <NavigationProperty Name="Order" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order__Detail_Order_ConsoleApplication1_Models_Order_OrderPartner" ToRole="Order" FromRole="OrderPartner" />
+        <NavigationProperty Name="Product" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Order__Detail_Product_ConsoleApplication1_Models_Product_ProductPartner" ToRole="Product" FromRole="ProductPartner" />
+      </EntityType>
+      <EntityType Name="Product">
+        <Key>
+          <PropertyRef Name="ProductID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ProductName" Type="Edm.String" />
+        <Property Name="QuantityPerUnit" Type="Edm.String" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" />
+        <Property Name="UnitsInStock" Type="Edm.Int16" />
+        <Property Name="UnitsOnOrder" Type="Edm.Int16" />
+        <Property Name="ReorderLevel" Type="Edm.Int16" />
+        <Property Name="Discontinued" Type="Edm.Boolean" Nullable="false" />
+        <NavigationProperty Name="Category" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Category_ConsoleApplication1_Models_Category_CategoryPartner" ToRole="Category" FromRole="CategoryPartner" />
+        <NavigationProperty Name="Order_Details" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner" ToRole="Order_Details" FromRole="Order_DetailsPartner" />
+        <NavigationProperty Name="Supplier" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Supplier_ConsoleApplication1_Models_Supplier_SupplierPartner" ToRole="Supplier" FromRole="SupplierPartner" />
+      </EntityType>
+      <EntityType Name="Region">
+        <Key>
+          <PropertyRef Name="RegionID" />
+        </Key>
+        <Property Name="RegionID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RegionDescription" Type="Edm.String" />
+        <NavigationProperty Name="Territories" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Region_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner" ToRole="Territories" FromRole="TerritoriesPartner" />
+      </EntityType>
+      <EntityType Name="Shipper">
+        <Key>
+          <PropertyRef Name="ShipperID" />
+        </Key>
+        <Property Name="ShipperID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CompanyName" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <NavigationProperty Name="Orders" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Shipper_Orders_ConsoleApplication1_Models_Order_OrdersPartner" ToRole="Orders" FromRole="OrdersPartner" />
+      </EntityType>
+      <EntityType Name="Supplier">
+        <Key>
+          <PropertyRef Name="SupplierID" />
+        </Key>
+        <Property Name="SupplierID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CompanyName" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="ContactTitle" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="Fax" Type="Edm.String" />
+        <Property Name="HomePage" Type="Edm.String" />
+        <NavigationProperty Name="Products" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Supplier_Products_ConsoleApplication1_Models_Product_ProductsPartner" ToRole="Products" FromRole="ProductsPartner" />
+      </EntityType>
+      <EntityType Name="Territory">
+        <Key>
+          <PropertyRef Name="TerritoryID" />
+        </Key>
+        <Property Name="TerritoryID" Type="Edm.String" Nullable="false" />
+        <Property Name="TerritoryDescription" Type="Edm.String" />
+        <NavigationProperty Name="Region" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Territory_Region_ConsoleApplication1_Models_Region_RegionPartner" ToRole="Region" FromRole="RegionPartner" />
+        <NavigationProperty Name="Employees" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Territory_Employees_ConsoleApplication1_Models_Employee_EmployeesPartner" ToRole="Employees" FromRole="EmployeesPartner" />
+      </EntityType>
+      <EntityType Name="Invoice">
+        <Key>
+          <PropertyRef Name="ProductID" />
+          <PropertyRef Name="OrderID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ShipName" Type="Edm.String" />
+        <Property Name="ShipAddress" Type="Edm.String" />
+        <Property Name="ShipCity" Type="Edm.String" />
+        <Property Name="ShipRegion" Type="Edm.String" />
+        <Property Name="ShipPostalCode" Type="Edm.String" />
+        <Property Name="ShipCountry" Type="Edm.String" />
+        <Property Name="CustomerID" Type="Edm.String" />
+        <Property Name="CustomerName" Type="Edm.String" />
+        <Property Name="Address" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="Salesperson" Type="Edm.String" />
+        <Property Name="OrderDate" Type="Edm.DateTime" />
+        <Property Name="RequiredDate" Type="Edm.DateTime" />
+        <Property Name="ShippedDate" Type="Edm.DateTime" />
+        <Property Name="ShipperName" Type="Edm.String" />
+        <Property Name="ProductName" Type="Edm.String" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Int16" Nullable="false" />
+        <Property Name="Discount" Type="Edm.Single" Nullable="false" />
+        <Property Name="ExtendedPrice" Type="Edm.Decimal" />
+        <Property Name="Freight" Type="Edm.Decimal" />
+      </EntityType>
+      <EntityType Name="Photo">
+        <Key>
+          <PropertyRef Name="EmployeeID" />
+        </Key>
+        <Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Bytes" Type="Edm.Binary" />
+        <NavigationProperty Name="Employee" Relationship="ConsoleApplication1.Models.ConsoleApplication1_Models_Photo_Employee_ConsoleApplication1_Models_Employee_EmployeePartner" ToRole="Employee" FromRole="EmployeePartner" />
+      </EntityType>
+      <Association Name="ConsoleApplication1_Models_Employee_PhotoInfo_ConsoleApplication1_Models_Photo_PhotoInfoPartner">
+        <End Type="ConsoleApplication1.Models.Photo" Role="PhotoInfo" Multiplicity="1" />
+        <End Type="ConsoleApplication1.Models.Employee" Role="PhotoInfoPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Employee_Employees1_ConsoleApplication1_Models_Employee_Employees1Partner">
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employees1" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employees1Partner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Employee_Employee1_ConsoleApplication1_Models_Employee_Employee1Partner">
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employee1" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employee1Partner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Employee_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+        <End Type="ConsoleApplication1.Models.Order" Role="Orders" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Employee" Role="OrdersPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Employee_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner">
+        <End Type="ConsoleApplication1.Models.Territory" Role="Territories" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Employee" Role="TerritoriesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Category_Products_ConsoleApplication1_Models_Product_ProductsPartner">
+        <End Type="ConsoleApplication1.Models.Product" Role="Products" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Category" Role="ProductsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_CustomerDemographic_Customers_ConsoleApplication1_Models_Customer_CustomersPartner">
+        <End Type="ConsoleApplication1.Models.Customer" Role="Customers" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.CustomerDemographic" Role="CustomersPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Customer_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+        <End Type="ConsoleApplication1.Models.Order" Role="Orders" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Customer" Role="OrdersPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Customer_CustomerDemographics_ConsoleApplication1_Models_CustomerDemographic_CustomerDemographicsPartner">
+        <End Type="ConsoleApplication1.Models.CustomerDemographic" Role="CustomerDemographics" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Customer" Role="CustomerDemographicsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order_Customer_ConsoleApplication1_Models_Customer_CustomerPartner">
+        <End Type="ConsoleApplication1.Models.Customer" Role="Customer" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Order" Role="CustomerPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order_Employee_ConsoleApplication1_Models_Employee_EmployeePartner">
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employee" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Order" Role="EmployeePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner">
+        <End Type="ConsoleApplication1.Models.Order_Detail" Role="Order_Details" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Order" Role="Order_DetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order_Shipper_ConsoleApplication1_Models_Shipper_ShipperPartner">
+        <End Type="ConsoleApplication1.Models.Shipper" Role="Shipper" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Order" Role="ShipperPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order__Detail_Order_ConsoleApplication1_Models_Order_OrderPartner">
+        <End Type="ConsoleApplication1.Models.Order" Role="Order" Multiplicity="1" />
+        <End Type="ConsoleApplication1.Models.Order_Detail" Role="OrderPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Order__Detail_Product_ConsoleApplication1_Models_Product_ProductPartner">
+        <End Type="ConsoleApplication1.Models.Product" Role="Product" Multiplicity="1" />
+        <End Type="ConsoleApplication1.Models.Order_Detail" Role="ProductPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Product_Category_ConsoleApplication1_Models_Category_CategoryPartner">
+        <End Type="ConsoleApplication1.Models.Category" Role="Category" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Product" Role="CategoryPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Product_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner">
+        <End Type="ConsoleApplication1.Models.Order_Detail" Role="Order_Details" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Product" Role="Order_DetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Product_Supplier_ConsoleApplication1_Models_Supplier_SupplierPartner">
+        <End Type="ConsoleApplication1.Models.Supplier" Role="Supplier" Multiplicity="0..1" />
+        <End Type="ConsoleApplication1.Models.Product" Role="SupplierPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Region_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner">
+        <End Type="ConsoleApplication1.Models.Territory" Role="Territories" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Region" Role="TerritoriesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Shipper_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+        <End Type="ConsoleApplication1.Models.Order" Role="Orders" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Shipper" Role="OrdersPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Supplier_Products_ConsoleApplication1_Models_Product_ProductsPartner">
+        <End Type="ConsoleApplication1.Models.Product" Role="Products" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Supplier" Role="ProductsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Territory_Region_ConsoleApplication1_Models_Region_RegionPartner">
+        <End Type="ConsoleApplication1.Models.Region" Role="Region" Multiplicity="1" />
+        <End Type="ConsoleApplication1.Models.Territory" Role="RegionPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Territory_Employees_ConsoleApplication1_Models_Employee_EmployeesPartner">
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employees" Multiplicity="*" />
+        <End Type="ConsoleApplication1.Models.Territory" Role="EmployeesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ConsoleApplication1_Models_Photo_Employee_ConsoleApplication1_Models_Employee_EmployeePartner">
+        <End Type="ConsoleApplication1.Models.Employee" Role="Employee" Multiplicity="1" />
+        <End Type="ConsoleApplication1.Models.Photo" Role="EmployeePartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="AlphabeticalListOfProducts" EntityType="ConsoleApplication1.Models.Alphabetical_list_of_product" />
+        <EntitySet Name="CategorySalesFor1997" EntityType="ConsoleApplication1.Models.Category_Sales_for_1997" />
+        <EntitySet Name="Employees" EntityType="ConsoleApplication1.Models.Employee" />
+        <EntitySet Name="Categories" EntityType="ConsoleApplication1.Models.Category" />
+        <EntitySet Name="CustomerDemographics" EntityType="ConsoleApplication1.Models.CustomerDemographic" />
+        <EntitySet Name="Customers" EntityType="ConsoleApplication1.Models.Customer" />
+        <EntitySet Name="Orders" EntityType="ConsoleApplication1.Models.Order" />
+        <EntitySet Name="OrderDetails" EntityType="ConsoleApplication1.Models.Order_Detail" />
+        <EntitySet Name="Products" EntityType="ConsoleApplication1.Models.Product" />
+        <EntitySet Name="Regions" EntityType="ConsoleApplication1.Models.Region" />
+        <EntitySet Name="Shippers" EntityType="ConsoleApplication1.Models.Shipper" />
+        <EntitySet Name="Suppliers" EntityType="ConsoleApplication1.Models.Supplier" />
+        <EntitySet Name="Territories" EntityType="ConsoleApplication1.Models.Territory" />
+        <EntitySet Name="Invoices" EntityType="ConsoleApplication1.Models.Invoice" />
+        <EntitySet Name="Photos" EntityType="ConsoleApplication1.Models.Photo" />
+        <AssociationSet Name="ConsoleApplication1_Models_Employee_PhotoInfo_ConsoleApplication1_Models_Photo_PhotoInfoPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_PhotoInfo_ConsoleApplication1_Models_Photo_PhotoInfoPartner">
+          <End Role="PhotoInfoPartner" EntitySet="Employees" />
+          <End Role="PhotoInfo" EntitySet="Photos" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Employee_Employees1_ConsoleApplication1_Models_Employee_Employees1PartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Employees1_ConsoleApplication1_Models_Employee_Employees1Partner">
+          <End Role="Employees1Partner" EntitySet="Employees" />
+          <End Role="Employees1" EntitySet="Employees" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Employee_Employee1_ConsoleApplication1_Models_Employee_Employee1PartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Employee1_ConsoleApplication1_Models_Employee_Employee1Partner">
+          <End Role="Employee1Partner" EntitySet="Employees" />
+          <End Role="Employee1" EntitySet="Employees" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Employee_Orders_ConsoleApplication1_Models_Order_OrdersPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+          <End Role="OrdersPartner" EntitySet="Employees" />
+          <End Role="Orders" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Employee_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Employee_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner">
+          <End Role="TerritoriesPartner" EntitySet="Employees" />
+          <End Role="Territories" EntitySet="Territories" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Category_Products_ConsoleApplication1_Models_Product_ProductsPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Category_Products_ConsoleApplication1_Models_Product_ProductsPartner">
+          <End Role="ProductsPartner" EntitySet="Categories" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_CustomerDemographic_Customers_ConsoleApplication1_Models_Customer_CustomersPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_CustomerDemographic_Customers_ConsoleApplication1_Models_Customer_CustomersPartner">
+          <End Role="CustomersPartner" EntitySet="CustomerDemographics" />
+          <End Role="Customers" EntitySet="Customers" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Customer_Orders_ConsoleApplication1_Models_Order_OrdersPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Customer_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+          <End Role="OrdersPartner" EntitySet="Customers" />
+          <End Role="Orders" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Customer_CustomerDemographics_ConsoleApplication1_Models_CustomerDemographic_CustomerDemographicsPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Customer_CustomerDemographics_ConsoleApplication1_Models_CustomerDemographic_CustomerDemographicsPartner">
+          <End Role="CustomerDemographicsPartner" EntitySet="Customers" />
+          <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order_Customer_ConsoleApplication1_Models_Customer_CustomerPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Customer_ConsoleApplication1_Models_Customer_CustomerPartner">
+          <End Role="CustomerPartner" EntitySet="Orders" />
+          <End Role="Customer" EntitySet="Customers" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order_Employee_ConsoleApplication1_Models_Employee_EmployeePartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Employee_ConsoleApplication1_Models_Employee_EmployeePartner">
+          <End Role="EmployeePartner" EntitySet="Orders" />
+          <End Role="Employee" EntitySet="Employees" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner">
+          <End Role="Order_DetailsPartner" EntitySet="Orders" />
+          <End Role="Order_Details" EntitySet="OrderDetails" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order_Shipper_ConsoleApplication1_Models_Shipper_ShipperPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order_Shipper_ConsoleApplication1_Models_Shipper_ShipperPartner">
+          <End Role="ShipperPartner" EntitySet="Orders" />
+          <End Role="Shipper" EntitySet="Shippers" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order__Detail_Order_ConsoleApplication1_Models_Order_OrderPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order__Detail_Order_ConsoleApplication1_Models_Order_OrderPartner">
+          <End Role="OrderPartner" EntitySet="OrderDetails" />
+          <End Role="Order" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Order__Detail_Product_ConsoleApplication1_Models_Product_ProductPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Order__Detail_Product_ConsoleApplication1_Models_Product_ProductPartner">
+          <End Role="ProductPartner" EntitySet="OrderDetails" />
+          <End Role="Product" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Product_Category_ConsoleApplication1_Models_Category_CategoryPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Category_ConsoleApplication1_Models_Category_CategoryPartner">
+          <End Role="CategoryPartner" EntitySet="Products" />
+          <End Role="Category" EntitySet="Categories" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Product_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Order__Details_ConsoleApplication1_Models_Order__Detail_Order__DetailsPartner">
+          <End Role="Order_DetailsPartner" EntitySet="Products" />
+          <End Role="Order_Details" EntitySet="OrderDetails" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Product_Supplier_ConsoleApplication1_Models_Supplier_SupplierPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Product_Supplier_ConsoleApplication1_Models_Supplier_SupplierPartner">
+          <End Role="SupplierPartner" EntitySet="Products" />
+          <End Role="Supplier" EntitySet="Suppliers" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Region_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Region_Territories_ConsoleApplication1_Models_Territory_TerritoriesPartner">
+          <End Role="TerritoriesPartner" EntitySet="Regions" />
+          <End Role="Territories" EntitySet="Territories" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Shipper_Orders_ConsoleApplication1_Models_Order_OrdersPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Shipper_Orders_ConsoleApplication1_Models_Order_OrdersPartner">
+          <End Role="OrdersPartner" EntitySet="Shippers" />
+          <End Role="Orders" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Supplier_Products_ConsoleApplication1_Models_Product_ProductsPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Supplier_Products_ConsoleApplication1_Models_Product_ProductsPartner">
+          <End Role="ProductsPartner" EntitySet="Suppliers" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Territory_Region_ConsoleApplication1_Models_Region_RegionPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Territory_Region_ConsoleApplication1_Models_Region_RegionPartner">
+          <End Role="RegionPartner" EntitySet="Territories" />
+          <End Role="Region" EntitySet="Regions" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Territory_Employees_ConsoleApplication1_Models_Employee_EmployeesPartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Territory_Employees_ConsoleApplication1_Models_Employee_EmployeesPartner">
+          <End Role="EmployeesPartner" EntitySet="Territories" />
+          <End Role="Employees" EntitySet="Employees" />
+        </AssociationSet>
+        <AssociationSet Name="ConsoleApplication1_Models_Photo_Employee_ConsoleApplication1_Models_Employee_EmployeePartnerSet" Association="ConsoleApplication1.Models.ConsoleApplication1_Models_Photo_Employee_ConsoleApplication1_Models_Employee_EmployeePartner">
+          <End Role="EmployeePartner" EntitySet="Photos" />
+          <End Role="Employee" EntitySet="Employees" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
